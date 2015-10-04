@@ -1,5 +1,5 @@
 {
-  "name": "amitava82/angular-multiselect",
+  "name": "michaelruelas/angular-multiselect",
   "version": "1.0.0",
   "main": "src/multiselect.js",
   "description": "Native AngularJS multiselect directive",
