@@ -1,4 +1,4 @@
-angular.module('app', ['ui.multiselect'])
+angular.module('app', ['ui.multiselect-fa'])
 
 .controller('appCtrl', ['$scope', function($scope){
     $scope.cars = [{id:1, name: 'Audi'}, {id:2, name: 'BMW'}, {id:3, name: 'Honda'}];

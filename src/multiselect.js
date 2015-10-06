@@ -1,22 +1,22 @@
-// Source: https://github.com/amitava82/angular-multiselect
-angular.module('ui.multiselect', [])
+// Source: https://github.com/michaelruelas/angular-multiselect
+angular.module('ui.multiselect-fa', [])
 
   //from bootstrap-ui typeahead parser
   .factory('optionParser', ['$parse', function ($parse) {
-  
+
    //                      00000111000000000000022200000000000000003333333333333330000000000044000
     var TYPEAHEAD_REGEXP = /^\s*([\s\S]+?)(?:\s+as\s+([\s\S]+?))?\s+for\s+(?:([\$\w][\$\w\d]*))\s+in\s+([\s\S]+?)$/;
-  
+
     return {
       parse:function (input) {
-  
+
         var match = input.match(TYPEAHEAD_REGEXP);
         if (!match) {
           throw new Error(
             'Expected typeahead specification in form of "_modelValue_ (as _label_)? for _item_ in _collection_"' +
               ' but got "' + input + '".');
         }
-  
+
         return {
           itemName:match[3],
           source:$parse(match[4]),
@@ -57,10 +57,10 @@ angular.module('ui.multiselect', [])
             scope.$destroy();
           });
 
-          var popUpEl = angular.element('<multiselect-popup' + 
-                        (attrs.templateUrl ? (' template-url="' + attrs.templateUrl + '"'): '' ) + 
+          var popUpEl = angular.element('<multiselect-popup' +
+                        (attrs.templateUrl ? (' template-url="' + attrs.templateUrl + '"'): '' ) +
                         '></multiselect-popup>');
-						
+
           //required validator
           if (attrs.required || attrs.ngRequired) {
             required = true;
@@ -127,7 +127,7 @@ angular.module('ui.multiselect', [])
 
           function getHeaderText() {
             if (is_empty(modelCtrl.$modelValue)) return scope.header = attrs.msHeader || 'Select';
-            
+
               if (isMultiple) {
                   if (attrs.msSelected) {
                       scope.header = $interpolate(attrs.msSelected)(scope);
@@ -142,7 +142,7 @@ angular.module('ui.multiselect', [])
                           scope.header = modelCtrl.$modelValue.length + ' ' + 'selected';
                       }
                   }
-              
+
             } else {
               if(angular.isString(modelCtrl.$modelValue)){
                 scope.header = modelCtrl.$modelValue;
@@ -153,7 +153,7 @@ angular.module('ui.multiselect', [])
               }
             }
           }
-          
+
           function is_empty(obj) {
             if (angular.isNumber(obj)) return false;
             if (obj && obj.length && obj.length > 0) return false;

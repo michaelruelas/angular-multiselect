@@ -1,4 +1,4 @@
-angular.module('ui.multiselect', [
+angular.module('ui.multiselect-fa', [
   'multiselect.tpl.html'
 ])
 
